@@ -92,7 +92,7 @@ public class CustomerReositoryImpl implements CustomerRepository {
     public boolean deleteCustomerAccount(int id){
         Customer cust =  customer_db.get(id);
         Accounts act = cust.getCustomerAccount();
-        Accounts account= new Accounts(1000,"defualt", 000);
+        Accounts account= new Accounts(1000,"default", 000);
         if(cust.getCustomerAccount().getAccountBalance() == act.getAccountBalance()){
             cust.setCustomerAccount(account);
             return true;

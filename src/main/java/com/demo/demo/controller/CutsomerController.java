@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.demo.demo.model.Accounts;
 import com.demo.demo.model.Customer;
 import com.demo.demo.service.CustomerService;
 
@@ -46,8 +47,34 @@ public class CutsomerController {
     }
 
     //fetch by id
-    @GetMapping("/customers/{id}")
-    public Customer searchCustomer(@PathVariable int id){
-        return customerService.getCustomer(id);
+    // @GetMapping("/customers/{id}")
+    // public Customer searchCustomer(@PathVariable int id){
+    //     return customerService.getCustomer(id);
+    // }
+    @GetMapping("/customers/accounts/{id}")
+    public Accounts getCustomerAccount(@PathVariable int id){
+        return customerService.getCustomerAccount(id);
     }
+    // @GetMapping("/customers/accounts/{id}")
+    // public String getCustomerAccountName(int id){
+    //     return customerService.getCustomerAccountName(id);
+    // }
+    // @PostMapping("/customers/accounts/{id},{balance}")
+    // public Customer setCustomerAccountBalance(@PathVariable int id,@PathVariable int Balance){
+    //     return customerService.setCustomerAccountBalance(id, Balance);
+    // }
+    // @PostMapping("/customers/accounts/{id},{AccountName}")
+    // public String setCustomerAccountName(@PathVariable int id,@PathVariable String AccountName){
+    //     return customerService.setCustomerAccountName(id, AccountName);
+    // }
+    @DeleteMapping("/customers/accounts/{id}")
+    public boolean deleteCustomerAccount(@PathVariable int id){
+        return customerService.deleteCustomerAccount(id);
+    }
+
+    
+    
+    
+
 }
+
